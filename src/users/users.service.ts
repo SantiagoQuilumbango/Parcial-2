@@ -34,7 +34,7 @@ export class UsersService {
   }
 
   async BuscarporNombre(username: string) {
-    return await this.modelo.findOne({ username });
+    return await this.modelo.findOne({ username: username });
   }
   async verficaContrasenia(password: string, passwordDB: string) {
     return await bcrypt.compare(password, passwordDB);
