@@ -32,4 +32,11 @@ export class UsersService {
     await this.modelo.findByIdAndDelete(id);
     return { status: HttpStatus.OK, msg: 'Usuario eliminado' };
   }
+
+  async BuscarporNombre(username: string) {
+    return await this.modelo.findOne({ username });
+  }
+  async verficaContrasenia(password: string, passwordDB: string) {
+    return await bcrypt.compare(password, passwordDB);
+  }
 }
