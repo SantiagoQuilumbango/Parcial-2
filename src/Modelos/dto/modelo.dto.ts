@@ -1,13 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class PassengerDTO {
+export class ModelosDTO { // Cambio de nombre de clase a ModelosDTO
   @ApiProperty()
   @IsNotEmpty({ message: 'El campo es obligatorio' })
   @IsString()
-  readonly name: string;
+  readonly nombre: string; // Cambio de nombre de atributo a nombre
+
   @ApiProperty()
   @IsNotEmpty({ message: 'El campo es obligatorio' })
   @IsString()
-  readonly email: string;
+  readonly marca: string; // Cambio de nombre de atributo a marca
 }
